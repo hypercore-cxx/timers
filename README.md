@@ -1,5 +1,5 @@
 # SYNOPSIS
-Simple timeouts for C++
+Simple timeouts for C++. Similar to `setTimeout()` and `clearTimeout()` in Javascript.
 
 # USAGE
 
@@ -8,7 +8,7 @@ Simple timeouts for C++
 Timeout t;
 ```
 
-## METHODS
+## INSTANCE METHODS
 
 ### set(lambda cb, int n)
 Set a timeout for n milliseconds
