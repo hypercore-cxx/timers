@@ -1,6 +1,10 @@
 {
   "name": "timeout",
   "verison": "1.0.0",
+  "main": "./index.cc",
   "description": "timeout functions",
-  "url": "//github.com/hij1nx/cpp-timeout"
+  "repository": { 
+    "type": "git", 
+    "url": "https://github.com/hij1nx/cpp-timeout.git"
+  }
 }
