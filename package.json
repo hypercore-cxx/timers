@@ -1,10 +1,19 @@
 {
-  "name": "timeout",
-  "verison": "1.0.0",
-  "main": "./index.cc",
+  "name": "timers",
   "description": "timeout functions",
+  "scripts": {
+    "test": [
+      "clang++ -std=c++2a",
+      "-O1 -g -fsanitize=address -fno-omit-frame-pointer",
+      "test/index.cxx -o test/index &&",
+      "ASAN_OPTIONS=detect_leaks=1 ./test/index"
+    ]
+  },
+  "files": [
+    "index.hxx"
+  ],
   "repository": { 
     "type": "git", 
-    "url": "https://github.com/hij1nx/cpp-timeout.git"
+    "url": "https://github.com/datcxx/cxx-timeout.git"
   }
 }

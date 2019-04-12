@@ -1,35 +1,75 @@
 # SYNOPSIS
-Simple timeouts for C++. Similar to `setTimeout()` and `clearTimeout()` in Javascript.
+Non blocking timers for `C++`.
 
 # USAGE
+This module is designed to work with the [`datcxx`][0] build tool. To add this
+module to your project us the following command...
 
-## CONSTRUCTOR
-```cpp
-Timeout t;
+```bash
+build add datcxx/cxx-timers
 ```
 
-## INSTANCE METHODS
+# TEST
 
-### set(lambda cb, int n)
-Set a timeout for n milliseconds
-
-```cpp
-t.set([]() {
-  cout << "ok, done";
-}, 100 * 10);
+```bash
+build run test
 ```
 
-### sleep(int n)
-Go to sleep n for milliseconds
+# API
 
-```cpp
-t.sleep(100);
+## TIMEOUT
+```c++
+Util::Timeout t;
+
+t.start([&] {
+  // timer called!
+}, 1000);
 ```
 
-### clear()
-Clear a timeout that has been set.
+## TIMEOUT
+```c++
+Util::Timeout t;
 
-```cpp
-t.clear();
+t.start([&] {
+  // called after 1000ms.
+}, 1000);
 ```
 
+To clear a timeout use the `clear()` method.
+
+```c++
+i.clear();
+```
+
+## INTERVAL
+
+```c++
+Util::Interval i;
+
+i.start([]() {
+  // called every 1000ms.
+}, 1000);
+```
+
+To clear an interval use the `clear()` method.
+
+```c++
+i.clear();
+```
+
+## SLEEP
+Put the current thread to sleep n for milliseconds.
+
+```cpp
+Util::sleep(100);
+```
+
+## TIMER
+
+```c++
+Util::Timer t; // starts the timer.
+
+cout << "Milliseconds: " << t.ms(); // milliseconds since created.
+
+t.reset(); // reset the timer.
+```
