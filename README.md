@@ -73,3 +73,5 @@ cout << "Milliseconds: " << t.ms(); // milliseconds since created.
 
 t.reset(); // reset the timer.
 ```
+
+[0]:https://github.com/datcxx/build
