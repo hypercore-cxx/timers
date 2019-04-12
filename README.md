@@ -38,7 +38,7 @@ t.start([&] {
 To clear a timeout use the `clear()` method.
 
 ```c++
-i.clear();
+t.clear();
 ```
 
 ## INTERVAL
