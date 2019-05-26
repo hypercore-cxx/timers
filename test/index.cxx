@@ -7,7 +7,7 @@
 int main() {
   using namespace std::literals;
 
-  Util::Timeout t;
+  Hyper::Util::Timeout t;
   int value = 0;
 
   t.start([&] {
@@ -35,8 +35,7 @@ int main() {
   // Test clear()
   //
   {
-    Util::Timeout t;
-    int value = 0;
+    Hyper::Util::Timeout t;
 
     t.start([&] {
       std::cout << "FAIL: callback called" << std::endl;
@@ -50,7 +49,7 @@ int main() {
 
   {
     int value = 0;
-    Util::Interval i;
+    Hyper::Util::Interval i;
     i.start([&] {
       value++;
     }, 10);
@@ -67,7 +66,7 @@ int main() {
   }
 
   {
-    Util::Timer t;
+    Hyper::Util::Timer t;
     std::this_thread::sleep_for(std::chrono::seconds(1));
     std::cout << "ELLAPSED: " << t.ms() << std::endl;
   }

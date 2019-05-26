@@ -6,7 +6,7 @@ This module is designed to work with the [`datcxx`][0] build tool. To add this
 module to your project us the following command...
 
 ```bash
-build add datcxx/cxx-timers
+build add datcxx/timers
 ```
 
 # TEST
@@ -19,7 +19,7 @@ build run test
 
 ## TIMEOUT
 ```c++
-Util::Timeout t;
+Hyper::Util::Timeout t;
 
 t.start([&] {
   // timer called!
@@ -28,7 +28,7 @@ t.start([&] {
 
 ## TIMEOUT
 ```c++
-Util::Timeout t;
+Hyper::Util::Timeout t;
 
 t.start([&] {
   // called after 1000ms.
@@ -44,7 +44,7 @@ t.clear();
 ## INTERVAL
 
 ```c++
-Util::Interval i;
+Hyper::Util::Interval i;
 
 i.start([]() {
   // called every 1000ms.
@@ -61,13 +61,13 @@ i.clear();
 Put the current thread to sleep n for milliseconds.
 
 ```cpp
-Util::sleep(100);
+Hyper::Util::sleep(100);
 ```
 
 ## TIMER
 
 ```c++
-Util::Timer t; // starts the timer.
+Hyper::Util::Timer t; // starts the timer.
 
 cout << "Milliseconds: " << t.ms(); // milliseconds since created.
 

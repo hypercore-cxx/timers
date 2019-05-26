@@ -3,7 +3,7 @@
   "description": "timer functions",
   "scripts": {
     "test": [
-      "clang++ -std=c++2a",
+      "clang++ -std=c++2a -stdlib=libc++",
       "-O1 -g -fsanitize=address -fno-omit-frame-pointer",
       "test/index.cxx -o test/index &&",
       "ASAN_OPTIONS=detect_leaks=1 ./test/index"
@@ -14,6 +14,6 @@
   ],
   "repository": { 
     "type": "git", 
-    "url": "https://github.com/datcxx/cxx-timers.git"
+    "url": "https://github.com/datcxx/timers.git"
   }
 }
