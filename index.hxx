@@ -12,7 +12,7 @@ namespace Hyper {
     using namespace std::literals;
     typedef std::function<void()> Callback;
 
-    void sleep (int n) {
+    inline void sleep (int n) {
       auto ms = std::chrono::milliseconds(n);
       std::this_thread::sleep_for(ms);
     }
